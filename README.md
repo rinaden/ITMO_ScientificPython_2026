@@ -8,32 +8,22 @@ Instructions on how to decode a Base64-encoded image string stored in a text fil
 ## Prerequisites
 
 - **Linux/Unix/macOS**: Base64 utility is pre-installed
-- **Windows**: 
-  - Option 1: Use Windows Subsystem for Linux (WSL)
-  - Option 2: Use Git Bash
-  - Option 3: Install Base64 for Windows manually
+- **Python 3.x** (for encoding)
 
 ## Instructions
 
-Example content of `input_image.txt`:
+Example content of `input_image.txt`.
 
-### Step 1: Decode the image
+Open any preferable IDE and create a Python script:
 
-Open your terminal/command prompt and navigate to the directory containing your text file:
+```python
+import base64 # Decoding
 
-```bash
-cd /path/to/your/file
-```
+f = open('input_image.txt', 'rb')  # Open encoded file
+byte = f.read()  # Read data
+f.close()
 
-Run the following command to decode the image:
-
-```bash
-base64 -d input_image.txt > output_image.png
-```
-
-### Step 2: Verify the result
-Check that the image was created successfully:
-
-```bash
-ls -la
+decode = open('image_name.png', 'wb')  # Open image file to save
+decode.write(base64.b64decode(byte))  # Decode and write data
+decode.close()
 ```
