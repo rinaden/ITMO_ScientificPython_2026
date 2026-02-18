@@ -23,14 +23,17 @@ Open your terminal/command prompt and navigate to the directory containing your 
 
 ```bash
 cd /path/to/your/file
+```
 
 Run the following command to decode the image:
 
 ```bash
 base64 -d input_image.txt > output_image.png
+```
 
-**### Step 2: Verify the result**
+### Step 2: Verify the result
 Check that the image was created successfully:
 
 ```bash
 ls -la
+```
